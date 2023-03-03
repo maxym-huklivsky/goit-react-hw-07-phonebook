@@ -1,11 +1,11 @@
 import { nanoid } from 'nanoid';
-import { FilterContainer, Label } from './FilterContacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilter } from 'redux/selectors';
+import { selectFilter } from 'redux/selectors';
 import { changeFilter } from 'redux/filterSlice';
+import { FilterContainer, Label } from './FilterContacts.styled';
 
 export const FilterContacts = () => {
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   const changeInput = e => {
